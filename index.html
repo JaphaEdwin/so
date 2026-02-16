@@ -1,0 +1,2800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SOCIWL Job Connect - Premier international job placement and HR solutions. Trusted partner for career advancement and workforce excellence.">
+    <meta name="keywords" content="international jobs, job placement, HR outsourcing, payroll services, career development">
+    
+    <!-- SSL Ready - Deploy with HTTPS -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    <title>SOCIWL Job Connect Consultants - Premium Global Placement Solutions</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-green: #0B3D2E;
+            --secondary-green: #0F6A4F;
+            --accent-gold: #C9A227;
+            --neutral-bg: #1a1f1c;
+            --white: #FFFFFF;
+            --dark: #0d1511;
+            --gray: #9CA3AF;
+            --light-gray: #374151;
+            --card-bg: #1f2825;
+            --text-light: #E5E7EB;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Crimson Pro', serif;
+            color: var(--text-light);
+            background: var(--neutral-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 2.75rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 1.75rem); }
+        
+        p {
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+        
+        /* Header - Sticky */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(13, 21, 17, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(201, 162, 39, 0.15);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(201, 162, 39, 0.1);
+        }
+        
+        header.scrolled {
+            box-shadow: 0 4px 30px rgba(201, 162, 39, 0.25);
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: visible;
+        }
+        
+        .logo-icon::before {
+            display: none;
+        }
+        
+        .logo-icon::after {
+            display: none;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .logo-icon svg {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 6px rgba(201, 162, 39, 0.5));
+        }
+        
+        .logo-text {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary-green);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary-green);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(11, 61, 46, 0.3);
+        }
+        
+        .btn-gold {
+            background: var(--accent-gold);
+            color: white;
+        }
+        
+        .btn-gold:hover {
+            background: #B89120;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(201, 162, 39, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-green);
+            color: white;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--neutral-bg) 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(201, 162, 39, 0.15) 0%, transparent 70%);
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-5deg); }
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.2s;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--card-bg);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(201, 162, 39, 0.2);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+        }
+        
+        .hero-badge i {
+            color: var(--accent-gold);
+        }
+        
+        .hero h1 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+        
+        .hero h1 .highlight {
+            color: var(--accent-gold);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: rgba(201, 162, 39, 0.25);
+            z-index: -1;
+        }
+        
+        .hero p {
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .hero-visual {
+            position: relative;
+            opacity: 0;
+            animation: fadeInRight 1s ease forwards 0.4s;
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .hero-image-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(11, 61, 46, 0.15);
+        }
+        
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .stats-card {
+            position: absolute;
+            background: var(--card-bg);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            animation: floatCard 3s infinite ease-in-out;
+            border: 1px solid rgba(201, 162, 39, 0.2);
+        }
+        
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .stats-card.card-1 {
+            top: 10%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+        
+        .stats-card.card-2 {
+            bottom: 15%;
+            right: -10%;
+            animation-delay: 1s;
+        }
+        
+        .stats-card h3 {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.25rem;
+        }
+        
+        .stats-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin: 0;
+        }
+        
+        /* Trust Badges */
+        .trust-section {
+            padding: 3rem 2rem;
+            background: var(--card-bg);
+            border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+        }
+        
+        .trust-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .trust-item {
+            text-align: center;
+            opacity: 0;
+        }
+        
+        .trust-item.visible {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .trust-item i {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .trust-item h4 {
+            font-size: 1.75rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.25rem;
+        }
+        
+        .trust-item p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin: 0;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--neutral-bg);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            opacity: 0;
+        }
+        
+        .section-header.visible {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: var(--gray);
+        }
+        
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            border: 1px solid rgba(201, 162, 39, 0.1);
+        }
+        
+        .service-card.visible {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-green), var(--accent-gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(11, 61, 46, 0.15);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .service-card h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .service-features li i {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+        }
+        
+        .service-link {
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+        
+        .service-link:hover {
+            gap: 1rem;
+        }
+        
+        /* Process Section */
+        .process {
+            padding: 6rem 2rem;
+            background: var(--card-bg);
+        }
+        
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .process-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--secondary-green), var(--accent-gold));
+        }
+        
+        .process-step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            position: relative;
+            opacity: 0;
+        }
+        
+        .process-step.visible {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .process-step:nth-child(even) .step-content {
+            order: 2;
+        }
+        
+        .process-step:nth-child(even) .step-visual {
+            order: 1;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+            z-index: 1;
+        }
+        
+        .step-content {
+            padding: 2rem;
+        }
+        
+        .step-content h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .step-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-features {
+            list-style: none;
+        }
+        
+        .step-features li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+        
+        .step-features li i {
+            color: var(--accent-gold);
+            margin-top: 0.25rem;
+        }
+        
+        .step-visual {
+            background: transparent;
+            border-radius: 15px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .step-visual i {
+            font-size: 5rem;
+            color: var(--accent-gold);
+            opacity: 0.3;
+        }
+        
+        /* Pay As You Go Section */
+        .pricing {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+            color: white;
+        }
+        
+        .pricing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .pricing-container h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-container p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-feature {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+        
+        .pricing-feature.visible {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .pricing-feature:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .pricing-feature i {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-feature h3 {
+            color: white;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+        
+        .pricing-feature p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--neutral-bg);
+        }
+        
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: all 0.4s ease;
+            opacity: 0;
+            border: 1px solid rgba(201, 162, 39, 0.1);
+        }
+        
+        .testimonial-card.visible {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+        
+        .stars {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-card p {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary-green), var(--accent-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        
+        .author-info h4 {
+            color: var(--white);
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+        
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin: 0;
+            font-style: normal;
+        }
+        
+        /* Application Form */
+        .application {
+            padding: 6rem 2rem;
+            background: var(--neutral-bg);
+        }
+        
+        .application-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .form-progress::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--light-gray);
+            z-index: 0;
+        }
+        
+        .progress-line {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            height: 3px;
+            background: var(--accent-gold);
+            transition: width 0.4s ease;
+            z-index: 1;
+        }
+        
+        .progress-step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .progress-step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 3px solid var(--light-gray);
+            margin: 0 auto 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+        
+        .progress-step.active .progress-step-circle {
+            border-color: var(--accent-gold);
+            background: var(--accent-gold);
+            color: white;
+        }
+        
+        .progress-step.completed .progress-step-circle {
+            border-color: var(--secondary-green);
+            background: var(--secondary-green);
+            color: white;
+        }
+        
+        .progress-step p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin: 0;
+        }
+        
+        .form-step {
+            display: none;
+            animation: fadeInUp 0.4s ease;
+        }
+        
+        .form-step.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Crimson Pro', serif;
+            transition: all 0.3s ease;
+            background: var(--card-bg);
+            color: var(--text-light);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.2);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .error-message {
+            color: #DC2626;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        
+        .form-group.error input,
+        .form-group.error select,
+        .form-group.error textarea {
+            border-color: #DC2626;
+        }
+        
+        .form-group.error .error-message {
+            display: block;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 2rem;
+            background: var(--neutral-bg);
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+            border: 1px solid rgba(201, 162, 39, 0.1);
+        }
+        
+        .faq-item.visible {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: var(--neutral-bg);
+        }
+        
+        .faq-question i {
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 2rem 1.5rem;
+        }
+        
+        .faq-answer p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--card-bg);
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-methods {
+            list-style: none;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--neutral-bg);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(201, 162, 39, 0.1);
+        }
+        
+        .contact-method:hover {
+            background: var(--card-bg);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.2);
+            transform: translateX(10px);
+            border-color: rgba(201, 162, 39, 0.3);
+        }
+        
+        .contact-method i {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-top: 0.25rem;
+        }
+        
+        .contact-method-info h4 {
+            color: var(--white);
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-method-info p {
+            color: var(--gray);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        .contact-method-info a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .contact-method-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-green);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-float i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+        
+        /* Loading Spinner */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .loading.active {
+            display: flex;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--light-gray);
+            border-top-color: var(--secondary-green);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-visual {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .stats-card {
+                position: relative;
+                top: auto;
+                bottom: auto;
+                left: auto;
+                right: auto;
+            }
+            
+            .process-timeline::before {
+                left: 0;
+            }
+            
+            .process-step {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .step-number {
+                left: 0;
+                transform: translateY(-50%);
+            }
+            
+            .process-step:nth-child(even) .step-content,
+            .process-step:nth-child(even) .step-visual {
+                order: initial;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                border-top: 1px solid rgba(201, 162, 39, 0.2);
+            }
+            
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-progress {
+                flex-wrap: wrap;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 1.5rem;
+            }
+            
+            /* Responsive HR Section */
+            div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-1 { margin-bottom: 1rem; }
+        .mb-2 { margin-bottom: 2rem; }
+        .mt-2 { margin-top: 2rem; }
+        
+        /* Advanced Scroll Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-10deg) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0) scale(1);
+            }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.8s ease forwards;
+        }
+        
+        .scale-in {
+            animation: scaleIn 0.6s ease forwards;
+        }
+        
+        .rotate-in {
+            animation: rotateIn 0.7s ease forwards;
+        }
+        
+        /* Stock Images Styling */
+        .stock-image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            background: var(--card-bg);
+            min-height: 200px;
+            object-fit: cover;
+        }
+        
+        .stock-image:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(201, 162, 39, 0.4);
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            background: var(--card-bg);
+        }
+        
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.1), transparent);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        /* Image Loading State */
+        img[src*="pixabay"] {
+            animation: fadeIn 0.6s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Feature Grid Styling */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-item {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(201, 162, 39, 0.2);
+            transition: all 0.4s ease;
+            opacity: 0;
+        }
+        
+        .feature-item.visible {
+            animation: scaleIn 0.6s ease forwards;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+            border-color: rgba(201, 162, 39, 0.5);
+            box-shadow: 0 15px 40px rgba(201, 162, 39, 0.3);
+        }
+        
+        .feature-icon-large {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-gold), #B89120);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#C9A227;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="darkGold" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#B8860B;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#8B6914;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="lightGold" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#FFE55C;stop-opacity:0.6" />
+                                <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Main Tower -->
+                        <rect x="35" y="15" width="30" height="70" fill="url(#goldGrad)" rx="2"/>
+                        
+                        <!-- Windows - Left Column -->
+                        <rect x="40" y="22" width="5" height="5" fill="url(#darkGold)" opacity="0.8"/>
+                        <rect x="40" y="32" width="5" height="5" fill="url(#darkGold)" opacity="0.8"/>
+                        <rect x="40" y="42" width="5" height="5" fill="url(#darkGold)" opacity="0.8"/>
+                        <rect x="40" y="52" width="5" height="5" fill="url(#darkGold)" opacity="0.8"/>
+                        <rect x="40" y="62" width="5" height="5" fill="url(#darkGold)" opacity="0.8"/>
+                        <rect x="40" y="72" width="5" height="5" fill="url(#darkGold)" opacity="0.8"/>
+                        
+                        <!-- Windows - Right Column -->
+                        <rect x="55" y="22" width="5" height="5" fill="url(#darkGold)" opacity="0.8"/>
+                        <rect x="55" y="32" width="5" height="5" fill="url(#darkGold)" opacity="0.8"/>
+                        <rect x="55" y="42" width="5" height="5" fill="url(#darkGold)" opacity="0.8"/>
+                        <rect x="55" y="52" width="5" height="5" fill="url(#darkGold)" opacity="0.8"/>
+                        <rect x="55" y="62" width="5" height="5" fill="url(#darkGold)" opacity="0.8"/>
+                        <rect x="55" y="72" width="5" height="5" fill="url(#darkGold)" opacity="0.8"/>
+                        
+                        <!-- Entrance/Base -->
+                        <rect x="42" y="80" width="16" height="5" fill="url(#darkGold)"/>
+                        
+                        <!-- Crown/Top -->
+                        <polygon points="50,10 35,15 65,15" fill="url(#goldGrad)"/>
+                        <rect x="48" y="7" width="4" height="3" fill="url(#goldGrad)"/>
+                        
+                        <!-- Shine Effect -->
+                        <rect x="36" y="17" width="2" height="66" fill="url(#lightGold)"/>
+                        
+                        <!-- Side Building (smaller) -->
+                        <rect x="22" y="45" width="10" height="40" fill="url(#goldGrad)" opacity="0.7" rx="1"/>
+                        <rect x="25" y="50" width="2" height="3" fill="url(#darkGold)" opacity="0.6"/>
+                        <rect x="25" y="58" width="2" height="3" fill="url(#darkGold)" opacity="0.6"/>
+                        <rect x="25" y="66" width="2" height="3" fill="url(#darkGold)" opacity="0.6"/>
+                        <rect x="25" y="74" width="2" height="3" fill="url(#darkGold)" opacity="0.6"/>
+                        
+                        <!-- Side Building (smaller right) -->
+                        <rect x="68" y="50" width="10" height="35" fill="url(#goldGrad)" opacity="0.7" rx="1"/>
+                        <rect x="71" y="55" width="2" height="3" fill="url(#darkGold)" opacity="0.6"/>
+                        <rect x="71" y="63" width="2" height="3" fill="url(#darkGold)" opacity="0.6"/>
+                        <rect x="71" y="71" width="2" height="3" fill="url(#darkGold)" opacity="0.6"/>
+                    </svg>
+                </div>
+                <div class="logo-text">SOCIWL</div>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-cta">
+                <a href="#application" class="btn btn-primary">Apply Now</a>
+                <a href="https://wa.me/256776579943" class="btn btn-gold" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    Trusted Global Partner
+                </div>
+                <h1>Your Gateway to <span class="highlight">Global Opportunities</span></h1>
+                <p>Premium international job placement and comprehensive HR solutions delivered with integrity, transparency, and excellence. Join thousands who've transformed their careers with SOCIWL.</p>
+                <div class="hero-buttons">
+                    <a href="#application" class="btn btn-primary">Start Your Journey</a>
+                    <a href="#services" class="btn btn-outline">Explore Services</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-image-container image-container">
+                    <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg" alt="Professional team collaboration" class="stock-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect width=%22800%22 height=%22600%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EProfessional Team%3C/text%3E%3C/svg%3E'">
+                </div>
+                <div class="stats-card card-1">
+                    <h3 class="counter" data-target="5000">0</h3>
+                    <p>Successful Placements</p>
+                </div>
+                <div class="stats-card card-2">
+                    <h3 class="counter" data-target="15">0</h3>
+                    <p>Years Excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="trust-container">
+            <div class="trust-item">
+                <i class="fas fa-shield-alt"></i>
+                <h4 class="counter" data-target="100">0</h4>
+                <p>Licensed & Certified</p>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-globe"></i>
+                <h4 class="counter" data-target="25">0</h4>
+                <p>Countries Served</p>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-users"></i>
+                <h4 class="counter" data-target="98">0</h4>
+                <p>Client Satisfaction</p>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-clock"></i>
+                <h4>24/7</h4>
+                <p>Support Available</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <span class="section-badge">Our Services</span>
+            <h2>Comprehensive Solutions for Your Success</h2>
+            <p>From international placements to complete HR management, we provide end-to-end services tailored to your needs.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-plane-departure"></i>
+                </div>
+                <h3>International Job Placement</h3>
+                <p>Connect with premium opportunities worldwide through our extensive network of verified employers.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> Visa processing assistance</li>
+                    <li><i class="fas fa-check-circle"></i> Pre-departure orientation</li>
+                    <li><i class="fas fa-check-circle"></i> Employment contracts</li>
+                    <li><i class="fas fa-check-circle"></i> Post-arrival support</li>
+                </ul>
+                <a href="#application" class="service-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-users-cog"></i>
+                </div>
+                <h3>HR Outsourcing</h3>
+                <p>Complete human resource management solutions to help your business focus on growth.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> Recruitment & staffing</li>
+                    <li><i class="fas fa-check-circle"></i> Employee management</li>
+                    <li><i class="fas fa-check-circle"></i> Performance tracking</li>
+                    <li><i class="fas fa-check-circle"></i> Compliance management</li>
+                </ul>
+                <a href="#contact" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                </div>
+                <h3>Payroll Services</h3>
+                <p>Accurate, timely payroll processing with full compliance and detailed reporting.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> Automated processing</li>
+                    <li><i class="fas fa-check-circle"></i> Tax compliance</li>
+                    <li><i class="fas fa-check-circle"></i> Direct deposits</li>
+                    <li><i class="fas fa-check-circle"></i> Detailed reports</li>
+                </ul>
+                <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Training & Development</h3>
+                <p>Skill enhancement programs designed to maximize career opportunities and success.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> Interview preparation</li>
+                    <li><i class="fas fa-check-circle"></i> Language training</li>
+                    <li><i class="fas fa-check-circle"></i> Skills certification</li>
+                    <li><i class="fas fa-check-circle"></i> Cultural orientation</li>
+                </ul>
+                <a href="#contact" class="service-link">Enroll Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <h3>Travel & Accommodation</h3>
+                <p>Seamless travel arrangements and comfortable accommodations for your journey.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> Flight bookings</li>
+                    <li><i class="fas fa-check-circle"></i> Hotel arrangements</li>
+                    <li><i class="fas fa-check-circle"></i> Airport transfers</li>
+                    <li><i class="fas fa-check-circle"></i> Travel insurance</li>
+                </ul>
+                <a href="#contact" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Consultation Services</h3>
+                <p>Expert guidance for career planning, business strategy, and regulatory compliance.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> Career counseling</li>
+                    <li><i class="fas fa-check-circle"></i> Business setup</li>
+                    <li><i class="fas fa-check-circle"></i> Legal compliance</li>
+                    <li><i class="fas fa-check-circle"></i> Market research</li>
+                </ul>
+                <a href="#contact" class="service-link">Consult Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="section-header">
+            <span class="section-badge">Our Process</span>
+            <h2>Simple Steps to Your Dream Career</h2>
+            <p>We've streamlined the placement process to make your journey smooth and stress-free.</p>
+        </div>
+        
+        <div class="process-container">
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Application & Assessment</h3>
+                        <p>Submit your application through our secure portal. Our team reviews your qualifications and matches you with suitable opportunities.</p>
+                        <ul class="step-features">
+                            <li><i class="fas fa-check"></i> Quick online application</li>
+                            <li><i class="fas fa-check"></i> Document verification</li>
+                            <li><i class="fas fa-check"></i> Skills assessment</li>
+                        </ul>
+                    </div>
+                    <div class="step-visual">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/checklist-1867934_1280.jpg" alt="Application Process" class="stock-image" style="width: 100%; height: 300px; object-fit: cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2248%22 font-family=%22Arial%22%3E%E2%9C%85%3C/text%3E%3C/svg%3E'">
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Job Matching</h3>
+                        <p>We connect you with verified employers that match your skills, experience, and career goals.</p>
+                        <ul class="step-features">
+                            <li><i class="fas fa-check"></i> Personalized job matches</li>
+                            <li><i class="fas fa-check"></i> Interview coordination</li>
+                            <li><i class="fas fa-check"></i> Offer negotiation</li>
+                        </ul>
+                    </div>
+                    <div class="step-visual">
+                        <img src="https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_1280.jpg" alt="Job Matching" class="stock-image" style="width: 100%; height: 300px; object-fit: cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2248%22 font-family=%22Arial%22%3E%F0%9F%92%BC%3C/text%3E%3C/svg%3E'">
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Documentation & Visa</h3>
+                        <p>Complete assistance with all necessary documentation, visa applications, and legal requirements.</p>
+                        <ul class="step-features">
+                            <li><i class="fas fa-check"></i> Document preparation</li>
+                            <li><i class="fas fa-check"></i> Visa processing</li>
+                            <li><i class="fas fa-check"></i> Medical clearances</li>
+                        </ul>
+                    </div>
+                    <div class="step-visual">
+                        <img src="https://cdn.pixabay.com/photo/2017/01/14/10/56/people-1979261_1280.jpg" alt="Documentation" class="stock-image" style="width: 100%; height: 300px; object-fit: cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2248%22 font-family=%22Arial%22%3E%F0%9F%93%84%3C/text%3E%3C/svg%3E'">
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Travel & Placement</h3>
+                        <p>We arrange your travel, ensure smooth arrival, and provide ongoing support as you settle into your new role.</p>
+                        <ul class="step-features">
+                            <li><i class="fas fa-check"></i> Travel arrangements</li>
+                            <li><i class="fas fa-check"></i> Airport pickup</li>
+                            <li><i class="fas fa-check"></i> Orientation support</li>
+                        </ul>
+                    </div>
+                    <div class="step-visual">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/04/19/36/beach-1236581_1280.jpg" alt="Travel and Placement" class="stock-image" style="width: 100%; height: 300px; object-fit: cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2248%22 font-family=%22Arial%22%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="pricing-container">
+            <h2>Pay-As-You-Go Model</h2>
+            <p>No hidden fees. Transparent pricing. Pay only when you succeed.</p>
+            
+            <div class="pricing-features">
+                <div class="pricing-feature">
+                    <i class="fas fa-percent"></i>
+                    <h3>Flexible Payments</h3>
+                    <p>Pay in stages as you progress through the placement process</p>
+                </div>
+                <div class="pricing-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Money-Back Guarantee</h3>
+                    <p>100% refund if placement doesn't materialize as agreed</p>
+                </div>
+                <div class="pricing-feature">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Transparent Contracts</h3>
+                    <p>Clear terms with no hidden charges or surprise fees</p>
+                </div>
+            </div>
+            
+            <a href="#contact" class="btn btn-gold">Get Custom Quote</a>
+        </div>
+    </section>
+
+    <!-- HR Excellence Section -->
+    <section style="padding: 6rem 2rem; background: var(--neutral-bg);">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div class="section-header">
+                <span class="section-badge">Why Choose Us</span>
+                <h2>Excellence in Human Resource Management</h2>
+                <p>Comprehensive HR solutions backed by years of expertise and proven success.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="feature-item">
+                    <div class="image-container" style="margin-bottom: 1.5rem;">
+                        <img src="https://cdn.pixabay.com/photo/2015/07/02/10/40/writing-828911_1280.jpg" alt="Professional Interview" class="stock-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EExpert Recruitment%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="feature-icon-large">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 style="color: var(--white); text-align: center; margin-bottom: 1rem;">Expert Recruitment</h3>
+                    <p style="color: var(--gray); text-align: center;">Rigorous candidate screening and matching process ensures the perfect fit for every position.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="image-container" style="margin-bottom: 1.5rem;">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg" alt="Team Training" class="stock-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EProfessional Training%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="feature-icon-large">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 style="color: var(--white); text-align: center; margin-bottom: 1rem;">Professional Training</h3>
+                    <p style="color: var(--gray); text-align: center;">Comprehensive training programs to enhance skills and ensure workplace readiness.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="image-container" style="margin-bottom: 1.5rem;">
+                        <img src="https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_1280.jpg" alt="Business Meeting" class="stock-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EOngoing Support%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="feature-icon-large">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 style="color: var(--white); text-align: center; margin-bottom: 1rem;">Ongoing Support</h3>
+                    <p style="color: var(--gray); text-align: center;">Continuous support from application to placement and beyond for lasting success.</p>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; align-items: center;">
+                <div class="image-container">
+                    <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849826_1280.jpg" alt="Professional Workplace" class="stock-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22700%22 height=%22500%22%3E%3Crect width=%22700%22 height=%22500%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EProfessional Workplace%3C/text%3E%3C/svg%3E'">
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-gold); font-size: 2rem; margin-bottom: 1.5rem;">Trusted by Leading Organizations</h3>
+                    <p style="color: var(--gray); margin-bottom: 1.5rem; line-height: 1.8;">Our proven track record speaks for itself. We've successfully placed thousands of professionals across multiple industries and countries, earning the trust of both job seekers and employers worldwide.</p>
+                    <div class="feature-grid" style="margin-top: 2rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <i class="fas fa-check-circle" style="color: var(--accent-gold); font-size: 1.5rem;"></i>
+                            <span style="color: var(--text-light);">ISO Certified Processes</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <i class="fas fa-check-circle" style="color: var(--accent-gold); font-size: 1.5rem;"></i>
+                            <span style="color: var(--text-light);">Licensed & Bonded</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <i class="fas fa-check-circle" style="color: var(--accent-gold); font-size: 1.5rem;"></i>
+                            <span style="color: var(--text-light);">24/7 Customer Support</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <i class="fas fa-check-circle" style="color: var(--accent-gold); font-size: 1.5rem;"></i>
+                            <span style="color: var(--text-light);">Ethical Recruitment Practices</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-container">
+            <div class="section-header">
+                <span class="section-badge">Success Stories</span>
+                <h2>What Our Clients Say</h2>
+                <p>Real experiences from professionals who transformed their careers with SOCIWL.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"SOCIWL made my dream of working abroad a reality. From application to landing in Dubai, every step was professionally handled. I'm now thriving in my career!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MK</div>
+                        <div class="author-info">
+                            <h4>Mary Kizito</h4>
+                            <p>Nurse, Dubai Healthcare</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Outstanding service! The team guided me through every document, prepared me for interviews, and even helped me settle in. Truly professional and caring."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h4>Joseph Mwanje</h4>
+                            <p>Engineer, Saudi Arabia</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"As an employer, SOCIWL has been our trusted HR partner for 3 years. They deliver quality talent and handle all the complexities of international recruitment."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SA</div>
+                        <div class="author-info">
+                            <h4>Sarah Ahmed</h4>
+                            <p>HR Director, Qatar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section class="application" id="application">
+        <div class="application-container">
+            <div class="section-header">
+                <span class="section-badge">Apply Now</span>
+                <h2>Start Your Journey Today</h2>
+                <p>Complete the application form below and our team will contact you within 24 hours.</p>
+            </div>
+            
+            <div class="form-progress">
+                <div class="progress-line" id="progressLine"></div>
+                <div class="progress-step active" data-step="1">
+                    <div class="progress-step-circle">1</div>
+                    <p>Personal Info</p>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="progress-step-circle">2</div>
+                    <p>Experience</p>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="progress-step-circle">3</div>
+                    <p>Preferences</p>
+                </div>
+                <div class="progress-step" data-step="4">
+                    <div class="progress-step-circle">4</div>
+                    <p>Review</p>
+                </div>
+            </div>
+            
+            <form id="applicationForm">
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" data-step="1">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <span class="error-message">Please enter your first name</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                            <span class="error-message">Please enter your last name</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message">Please enter a valid email</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <span class="error-message">Please enter your phone number</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nationality">Nationality *</label>
+                        <input type="text" id="nationality" name="nationality" required>
+                        <span class="error-message">Please enter your nationality</span>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Experience -->
+                <div class="form-step" data-step="2">
+                    <div class="form-group">
+                        <label for="education">Highest Education Level *</label>
+                        <select id="education" name="education" required>
+                            <option value="">Select Education Level</option>
+                            <option value="high-school">High School</option>
+                            <option value="diploma">Diploma</option>
+                            <option value="bachelors">Bachelor's Degree</option>
+                            <option value="masters">Master's Degree</option>
+                            <option value="phd">PhD</option>
+                        </select>
+                        <span class="error-message">Please select your education level</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="field">Field of Study *</label>
+                        <input type="text" id="field" name="field" required>
+                        <span class="error-message">Please enter your field of study</span>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="experience">Years of Experience *</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">Select Experience</option>
+                                <option value="0-2">0-2 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="6-10">6-10 years</option>
+                                <option value="10+">10+ years</option>
+                            </select>
+                            <span class="error-message">Please select your experience</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentRole">Current/Recent Role *</label>
+                            <input type="text" id="currentRole" name="currentRole" required>
+                            <span class="error-message">Please enter your current role</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="skills">Key Skills *</label>
+                        <textarea id="skills" name="skills" required placeholder="List your key professional skills..."></textarea>
+                        <span class="error-message">Please list your skills</span>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Preferences -->
+                <div class="form-step" data-step="3">
+                    <div class="form-group">
+                        <label for="jobType">Preferred Job Type *</label>
+                        <select id="jobType" name="jobType" required>
+                            <option value="">Select Job Type</option>
+                            <option value="full-time">Full-time</option>
+                            <option value="part-time">Part-time</option>
+                            <option value="contract">Contract</option>
+                            <option value="freelance">Freelance</option>
+                        </select>
+                        <span class="error-message">Please select job type</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="locations">Preferred Countries/Regions *</label>
+                        <input type="text" id="locations" name="locations" required placeholder="e.g., UAE, Saudi Arabia, Qatar">
+                        <span class="error-message">Please enter preferred locations</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="availability">When can you start? *</label>
+                        <select id="availability" name="availability" required>
+                            <option value="">Select Availability</option>
+                            <option value="immediately">Immediately</option>
+                            <option value="1-month">Within 1 month</option>
+                            <option value="2-months">Within 2 months</option>
+                            <option value="3-months">Within 3 months</option>
+                        </select>
+                        <span class="error-message">Please select your availability</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="salary">Expected Salary Range *</label>
+                        <input type="text" id="salary" name="salary" required placeholder="e.g., $3,000 - $5,000 per month">
+                        <span class="error-message">Please enter expected salary</span>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Review -->
+                <div class="form-step" data-step="4">
+                    <h3 style="color: var(--white); margin-bottom: 1.5rem;">Review Your Application</h3>
+                    <div id="reviewContent" style="background: var(--card-bg); padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; border: 1px solid rgba(201, 162, 39, 0.2);">
+                        <!-- Review content will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="terms" name="terms" required style="width: auto; margin-right: 0.5rem;">
+                            I agree to the terms and conditions and privacy policy *
+                        </label>
+                        <span class="error-message">You must agree to continue</span>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="prevBtn" style="display: none;">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button type="button" class="btn btn-primary" id="nextBtn">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button type="submit" class="btn btn-gold" id="submitBtn" style="display: none;">
+                        <i class="fas fa-paper-plane"></i> Submit Application
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="faq-container">
+            <div class="section-header">
+                <span class="section-badge">FAQ</span>
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services and processes.</p>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does the placement process take?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The typical placement process takes 2-4 months from application to departure, depending on visa processing times, documentation requirements, and job matching. We work efficiently to minimize waiting time while ensuring all procedures are properly completed.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What are your service fees?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We operate on a transparent pay-as-you-go model with fees split across different stages. Exact costs vary based on destination country, job type, and specific requirements. Contact us for a detailed, personalized quote with no hidden charges.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you provide visa assistance?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, comprehensive visa assistance is included in our services. We handle documentation preparation, application submission, follow-ups, and provide guidance throughout the visa approval process for all destination countries.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What happens if I don't get placed?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a money-back guarantee. If we're unable to secure a placement as per our agreement, you'll receive a full refund of service fees. We're committed to your success and stand behind our services 100%.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Which countries do you place candidates in?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We have active partnerships in over 25 countries, with strong presence in UAE, Saudi Arabia, Qatar, Kuwait, Oman, Canada, UK, and several European nations. Contact us to discuss specific country preferences and opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>Have questions? Our team is ready to help you. Reach out through any of these channels.</p>
+                
+                <ul class="contact-methods">
+                    <li class="contact-method">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-method-info">
+                            <h4>Visit Us</h4>
+                            <p>Kampala, Uganda<br>Central Region</p>
+                        </div>
+                    </li>
+                    
+                    <li class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-method-info">
+                            <h4>Call Us</h4>
+                            <p><a href="tel:+256776579943">+256 776 579 943</a><br>
+                            <a href="tel:+256708913583">+256 708 913 583</a><br>
+                            <a href="tel:+256740625894">+256 740 625 894</a></p>
+                        </div>
+                    </li>
+                    
+                    <li class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-method-info">
+                            <h4>Email Us</h4>
+                            <p><a href="mailto:sociwljobconnect@gmail.com">sociwljobconnect@gmail.com</a></p>
+                        </div>
+                    </li>
+                    
+                    <li class="contact-method">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="contact-method-info">
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/256776579943" target="_blank">+256 776 579 943 - Chat instantly</a></p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/sociwljobconnect" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/sociwljobconnect" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/sociwl-job-connect" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/sociwljobconnect" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@sociwljobconnect" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/256776579943" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="contactName">Full Name *</label>
+                        <input type="text" id="contactName" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address *</label>
+                        <input type="email" id="contactEmail" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number</label>
+                        <input type="tel" id="contactPhone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactSubject">Subject *</label>
+                        <input type="text" id="contactSubject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactMessage">Message *</label>
+                        <textarea id="contactMessage" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About SOCIWL</h3>
+                <p>Your trusted partner in global career advancement and comprehensive HR solutions. We connect talent with opportunity through integrity, excellence, and personalized service.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="#process"><i class="fas fa-chevron-right"></i> Process</a></li>
+                    <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> International Placement</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> HR Outsourcing</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Payroll Services</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Training Programs</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Travel & Booking</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Stay updated with latest job opportunities and career tips.</p>
+                <form id="newsletterForm" style="margin-top: 1rem;">
+                    <div class="form-group" style="margin-bottom: 0.5rem;">
+                        <input type="email" placeholder="Your email address" style="width: 100%; padding: 0.75rem; border: 1px solid rgba(201,162,39,0.3); border-radius: 8px; background: rgba(13,21,17,0.5); color: white;">
+                    </div>
+                    <button type="submit" class="btn btn-gold" style="width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 SOCIWL JOB CONNECT CONSULTANTS (U) - SMC LIMITED. All Rights Reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/256776579943" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Add different animation styles based on element
+                    if (entry.target.classList.contains('service-card')) {
+                        const index = Array.from(entry.target.parentElement.children).indexOf(entry.target);
+                        if (index % 3 === 0) {
+                            entry.target.classList.add('slide-in-left');
+                        } else if (index % 3 === 1) {
+                            entry.target.classList.add('scale-in');
+                        } else {
+                            entry.target.classList.add('slide-in-right');
+                        }
+                    }
+                    
+                    if (entry.target.classList.contains('testimonial-card')) {
+                        entry.target.classList.add('rotate-in');
+                    }
+                    
+                    if (entry.target.classList.contains('feature-item')) {
+                        const index = Array.from(entry.target.parentElement.children).indexOf(entry.target);
+                        entry.target.style.animationDelay = `${index * 0.2}s`;
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all animated elements
+        document.querySelectorAll('.section-header, .service-card, .trust-item, .process-step, .pricing-feature, .testimonial-card, .faq-item, .feature-item').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Counter animation
+        function animateCounter(element) {
+            const target = parseInt(element.dataset.target);
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current) + (element.textContent.includes('%') ? '%' : '+');
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target + (element.textContent.includes('%') ? '%' : '+');
+                }
+            };
+            
+            updateCounter();
+        }
+        
+        // Trigger counters when visible
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    animateCounter(entry.target);
+                    entry.target.classList.add('counted');
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('.counter').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Scroll to top button
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.scrollY > 500) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top
+        document.getElementById('scrollTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-open');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('mobile-open');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            });
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+        
+        // Multi-step form
+        let currentStep = 1;
+        const totalSteps = 4;
+        const formData = {};
+        
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const progressLine = document.getElementById('progressLine');
+        
+        function updateProgress() {
+            const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+            progressLine.style.width = progress + '%';
+            
+            // Update step indicators
+            document.querySelectorAll('.progress-step').forEach((step, index) => {
+                const stepNum = index + 1;
+                step.classList.remove('active', 'completed');
+                
+                if (stepNum < currentStep) {
+                    step.classList.add('completed');
+                } else if (stepNum === currentStep) {
+                    step.classList.add('active');
+                }
+            });
+            
+            // Show/hide buttons
+            prevBtn.style.display = currentStep === 1 ? 'none' : 'inline-flex';
+            nextBtn.style.display = currentStep === totalSteps ? 'none' : 'inline-flex';
+            submitBtn.style.display = currentStep === totalSteps ? 'inline-flex' : 'none';
+        }
+        
+        function validateStep(step) {
+            const currentFormStep = document.querySelector(`.form-step[data-step="${step}"]`);
+            const inputs = currentFormStep.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                const formGroup = input.closest('.form-group');
+                
+                if (!input.value.trim()) {
+                    formGroup.classList.add('error');
+                    isValid = false;
+                } else if (input.type === 'email' && !input.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                    formGroup.classList.add('error');
+                    isValid = false;
+                } else {
+                    formGroup.classList.remove('error');
+                }
+                
+                // Store value
+                formData[input.name] = input.value;
+            });
+            
+            return isValid;
+        }
+        
+        function showStep(step) {
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+            document.querySelector(`.form-step[data-step="${step}"]`).classList.add('active');
+            
+            // Populate review on last step
+            if (step === 4) {
+                populateReview();
+            }
+            
+            updateProgress();
+        }
+        
+        function populateReview() {
+            const reviewContent = document.getElementById('reviewContent');
+            reviewContent.innerHTML = `
+                <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Personal Information</h4>
+                <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
+                <p><strong>Email:</strong> ${formData.email}</p>
+                <p><strong>Phone:</strong> ${formData.phone}</p>
+                <p><strong>Nationality:</strong> ${formData.nationality}</p>
+                
+                <h4 style="color: var(--accent-gold); margin: 1.5rem 0 1rem;">Experience & Education</h4>
+                <p><strong>Education:</strong> ${formData.education}</p>
+                <p><strong>Field:</strong> ${formData.field}</p>
+                <p><strong>Experience:</strong> ${formData.experience}</p>
+                <p><strong>Current Role:</strong> ${formData.currentRole}</p>
+                <p><strong>Skills:</strong> ${formData.skills}</p>
+                
+                <h4 style="color: var(--accent-gold); margin: 1.5rem 0 1rem;">Job Preferences</h4>
+                <p><strong>Job Type:</strong> ${formData.jobType}</p>
+                <p><strong>Preferred Locations:</strong> ${formData.locations}</p>
+                <p><strong>Availability:</strong> ${formData.availability}</p>
+                <p><strong>Expected Salary:</strong> ${formData.salary}</p>
+            `;
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            if (validateStep(currentStep)) {
+                currentStep++;
+                showStep(currentStep);
+                window.scrollTo({ top: document.querySelector('.application').offsetTop - 100, behavior: 'smooth' });
+            }
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            currentStep--;
+            showStep(currentStep);
+            window.scrollTo({ top: document.querySelector('.application').offsetTop - 100, behavior: 'smooth' });
+        });
+        
+        // Form submission
+        document.getElementById('applicationForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const termsCheckbox = document.getElementById('terms');
+            if (!termsCheckbox.checked) {
+                termsCheckbox.closest('.form-group').classList.add('error');
+                return;
+            }
+            
+            // Show loading
+            document.getElementById('loading').classList.add('active');
+            
+            // Simulate API call
+            setTimeout(() => {
+                document.getElementById('loading').classList.remove('active');
+                alert('✓ Application submitted successfully! We will contact you within 24 hours.');
+                document.getElementById('applicationForm').reset();
+                currentStep = 1;
+                showStep(currentStep);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 2000);
+        });
+        
+        // Contact form
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            document.getElementById('loading').classList.add('active');
+            
+            setTimeout(() => {
+                document.getElementById('loading').classList.remove('active');
+                alert('✓ Message sent successfully! We will get back to you soon.');
+                document.getElementById('contactForm').reset();
+            }, 1500);
+        });
+        
+        // Newsletter form
+        document.getElementById('newsletterForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = e.target.querySelector('input[type="email"]').value;
+            
+            if (email) {
+                alert('✓ Thank you for subscribing to our newsletter!');
+                e.target.reset();
+            }
+        });
+        
+        // Initialize
+        updateProgress();
+    </script>
+</body>
+</html>
