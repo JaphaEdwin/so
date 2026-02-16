@@ -6,10 +6,21 @@
     <meta name="description" content="SOCIWL Job Connect - Premier international job placement and HR solutions. Trusted partner for career advancement and workforce excellence.">
     <meta name="keywords" content="international jobs, job placement, HR outsourcing, payroll services, career development">
     
+    <!-- Performance optimizations -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <!-- SSL Ready - Deploy with HTTPS -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     
     <title>SOCIWL Job Connect Consultants - Premium Global Placement Solutions</title>
+    
+    <!-- Preconnect to image CDN for faster loading -->
+    <link rel="preconnect" href="https://cdn.pixabay.com">
+    <link rel="dns-prefetch" href="https://cdn.pixabay.com">
+    
+    <!-- Preload critical hero image -->
+    <link rel="preload" as="image" href="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_640.jpg" type="image/jpeg">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Icons -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -136,7 +148,9 @@
             font-family: 'Sora', sans-serif;
             font-size: 1.25rem;
             font-weight: 700;
-            color: var(--primary-green);
+            color: var(--accent-gold);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
         }
         
         .nav-links {
@@ -230,8 +244,29 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--primary-green);
+            color: var(--accent-gold);
             cursor: pointer;
+            padding: 0.5rem;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+            color: #FFD700;
+            background: rgba(201, 162, 39, 0.1);
+        }
+        
+        .mobile-menu-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .mobile-menu-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu-btn:hover i {
+            transform: rotate(90deg);
         }
         
         /* Hero Section */
@@ -1528,6 +1563,10 @@
             background: var(--card-bg);
             min-height: 200px;
             object-fit: cover;
+            will-change: transform;
+            contain: layout style paint;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
         }
         
         .stock-image:hover {
@@ -1540,6 +1579,7 @@
             overflow: hidden;
             border-radius: 15px;
             background: var(--card-bg);
+            contain: layout style paint;
         }
         
         .image-container::before {
@@ -1562,6 +1602,15 @@
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
+        }
+        
+        /* Prevent layout shift during image load */
+        .hero-image-container {
+            aspect-ratio: 4/3;
+        }
+        
+        .step-visual {
+            aspect-ratio: 5/4;
         }
         
         /* Feature Grid Styling */
@@ -1695,8 +1744,8 @@
                 </a>
             </div>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i class="fas fa-bars" id="menuIcon"></i>
             </button>
         </nav>
     </header>
@@ -1719,7 +1768,16 @@
             
             <div class="hero-visual">
                 <div class="hero-image-container image-container">
-                    <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg" alt="Professional team collaboration" class="stock-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect width=%22800%22 height=%22600%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EProfessional Team%3C/text%3E%3C/svg%3E'">
+                    <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_640.jpg" 
+                         srcset="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_640.jpg 640w,
+                                 https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_960.jpg 960w,
+                                 https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg 1280w"
+                         sizes="(max-width: 768px) 100vw, 50vw"
+                         alt="Professional team collaboration" 
+                         class="stock-image" 
+                         loading="eager"
+                         decoding="async"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect width=%22800%22 height=%22600%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EProfessional Team%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="stats-card card-1">
                     <h3 class="counter" data-target="5000">0</h3>
@@ -1882,7 +1940,13 @@
                         </ul>
                     </div>
                     <div class="step-visual">
-                        <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/checklist-1867934_1280.jpg" alt="Application Process" class="stock-image" style="width: 100%; height: 300px; object-fit: cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2248%22 font-family=%22Arial%22%3E%E2%9C%85%3C/text%3E%3C/svg%3E'">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/checklist-1867934_640.jpg" 
+                             alt="Application Process" 
+                             class="stock-image" 
+                             style="width: 100%; height: 300px; object-fit: cover;" 
+                             loading="lazy"
+                             decoding="async"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2248%22 font-family=%22Arial%22%3E%E2%9C%85%3C/text%3E%3C/svg%3E'">
                     </div>
                 </div>
                 
@@ -1898,7 +1962,13 @@
                         </ul>
                     </div>
                     <div class="step-visual">
-                        <img src="https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_1280.jpg" alt="Job Matching" class="stock-image" style="width: 100%; height: 300px; object-fit: cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2248%22 font-family=%22Arial%22%3E%F0%9F%92%BC%3C/text%3E%3C/svg%3E'">
+                        <img src="https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_640.jpg" 
+                             alt="Job Matching" 
+                             class="stock-image" 
+                             style="width: 100%; height: 300px; object-fit: cover;" 
+                             loading="lazy"
+                             decoding="async"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2248%22 font-family=%22Arial%22%3E%F0%9F%92%BC%3C/text%3E%3C/svg%3E'">
                     </div>
                 </div>
                 
@@ -1914,7 +1984,13 @@
                         </ul>
                     </div>
                     <div class="step-visual">
-                        <img src="https://cdn.pixabay.com/photo/2017/01/14/10/56/people-1979261_1280.jpg" alt="Documentation" class="stock-image" style="width: 100%; height: 300px; object-fit: cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2248%22 font-family=%22Arial%22%3E%F0%9F%93%84%3C/text%3E%3C/svg%3E'">
+                        <img src="https://cdn.pixabay.com/photo/2017/01/14/10/56/people-1979261_640.jpg" 
+                             alt="Documentation" 
+                             class="stock-image" 
+                             style="width: 100%; height: 300px; object-fit: cover;" 
+                             loading="lazy"
+                             decoding="async"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2248%22 font-family=%22Arial%22%3E%F0%9F%93%84%3C/text%3E%3C/svg%3E'">
                     </div>
                 </div>
                 
@@ -1930,7 +2006,13 @@
                         </ul>
                     </div>
                     <div class="step-visual">
-                        <img src="https://cdn.pixabay.com/photo/2016/03/04/19/36/beach-1236581_1280.jpg" alt="Travel and Placement" class="stock-image" style="width: 100%; height: 300px; object-fit: cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2248%22 font-family=%22Arial%22%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E'">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/04/19/36/beach-1236581_640.jpg" 
+                             alt="Travel and Placement" 
+                             class="stock-image" 
+                             style="width: 100%; height: 300px; object-fit: cover;" 
+                             loading="lazy"
+                             decoding="async"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2248%22 font-family=%22Arial%22%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E'">
                     </div>
                 </div>
             </div>
@@ -1977,7 +2059,12 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
                 <div class="feature-item">
                     <div class="image-container" style="margin-bottom: 1.5rem;">
-                        <img src="https://cdn.pixabay.com/photo/2015/07/02/10/40/writing-828911_1280.jpg" alt="Professional Interview" class="stock-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EExpert Recruitment%3C/text%3E%3C/svg%3E'">
+                        <img src="https://cdn.pixabay.com/photo/2015/07/02/10/40/writing-828911_640.jpg" 
+                             alt="Professional Interview" 
+                             class="stock-image" 
+                             loading="lazy"
+                             decoding="async"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EExpert Recruitment%3C/text%3E%3C/svg%3E'">
                     </div>
                     <div class="feature-icon-large">
                         <i class="fas fa-user-tie"></i>
@@ -1988,7 +2075,12 @@
                 
                 <div class="feature-item">
                     <div class="image-container" style="margin-bottom: 1.5rem;">
-                        <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg" alt="Team Training" class="stock-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EProfessional Training%3C/text%3E%3C/svg%3E'">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_640.jpg" 
+                             alt="Team Training" 
+                             class="stock-image" 
+                             loading="lazy"
+                             decoding="async"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EProfessional Training%3C/text%3E%3C/svg%3E'">
                     </div>
                     <div class="feature-icon-large">
                         <i class="fas fa-chalkboard-teacher"></i>
@@ -1999,7 +2091,12 @@
                 
                 <div class="feature-item">
                     <div class="image-container" style="margin-bottom: 1.5rem;">
-                        <img src="https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_1280.jpg" alt="Business Meeting" class="stock-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EOngoing Support%3C/text%3E%3C/svg%3E'">
+                        <img src="https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_640.jpg" 
+                             alt="Business Meeting" 
+                             class="stock-image" 
+                             loading="lazy"
+                             decoding="async"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EOngoing Support%3C/text%3E%3C/svg%3E'">
                     </div>
                     <div class="feature-icon-large">
                         <i class="fas fa-handshake"></i>
@@ -2011,7 +2108,12 @@
             
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; align-items: center;">
                 <div class="image-container">
-                    <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849826_1280.jpg" alt="Professional Workplace" class="stock-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22700%22 height=%22500%22%3E%3Crect width=%22700%22 height=%22500%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EProfessional Workplace%3C/text%3E%3C/svg%3E'">
+                    <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849826_640.jpg" 
+                         alt="Professional Workplace" 
+                         class="stock-image" 
+                         loading="lazy"
+                         decoding="async"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22700%22 height=%22500%22%3E%3Crect width=%22700%22 height=%22500%22 fill=%22%231f2825%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23C9A227%22 font-size=%2224%22 font-family=%22Arial%22%3EProfessional Workplace%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div>
                     <h3 style="color: var(--accent-gold); font-size: 2rem; margin-bottom: 1.5rem;">Trusted by Leading Organizations</h3>
@@ -2595,12 +2697,19 @@
         // Mobile menu
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
+        const menuIcon = document.getElementById('menuIcon');
         
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('mobile-open');
-            const icon = mobileMenuBtn.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
+            
+            // Toggle between hamburger and X icon
+            if (navLinks.classList.contains('mobile-open')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
         });
         
         // Smooth scroll for navigation
@@ -2611,10 +2720,11 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     // Close mobile menu if open
-                    navLinks.classList.remove('mobile-open');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-times');
+                    if (navLinks.classList.contains('mobile-open')) {
+                        navLinks.classList.remove('mobile-open');
+                        menuIcon.classList.remove('fa-times');
+                        menuIcon.classList.add('fa-bars');
+                    }
                 }
             });
         });
