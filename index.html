@@ -36,13 +36,15 @@
             --primary-green: #0B3D2E;
             --secondary-green: #0F6A4F;
             --accent-gold: #C9A227;
-            --neutral-bg: #1a1f1c;
+            --neutral-bg: #F4F9F6;
             --white: #FFFFFF;
-            --dark: #0d1511;
-            --gray: #9CA3AF;
-            --light-gray: #374151;
-            --card-bg: #1f2825;
-            --text-light: #E5E7EB;
+            --dark: #0B3D2E;
+            --gray: #4B5563;
+            --light-gray: #D1D5DB;
+            --card-bg: #FFFFFF;
+            --text-light: #1F2937;
+            --section-alt: #EAF3EE;
+            --section-dark: #0B3D2E;
         }
         
         * {
@@ -84,16 +86,16 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(13, 21, 17, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(201, 162, 39, 0.15);
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(11, 61, 46, 0.1);
             z-index: 1000;
             transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(201, 162, 39, 0.1);
+            border-bottom: 2px solid rgba(201, 162, 39, 0.25);
         }
-        
+
         header.scrolled {
-            box-shadow: 0 4px 30px rgba(201, 162, 39, 0.25);
+            box-shadow: 0 4px 30px rgba(11, 61, 46, 0.15);
         }
         
         nav {
@@ -161,13 +163,13 @@
         }
         
         .nav-links a {
-            color: var(--text-light);
+            color: var(--primary-green);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s ease;
             position: relative;
         }
-        
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -178,11 +180,11 @@
             background: var(--accent-gold);
             transition: width 0.3s ease;
         }
-        
+
         .nav-links a:hover {
             color: var(--accent-gold);
         }
-        
+
         .nav-links a:hover::after {
             width: 100%;
         }
@@ -277,9 +279,9 @@
             display: flex;
             align-items: center;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--neutral-bg) 100%);
+            background: linear-gradient(135deg, #EAF3EE 0%, #F4F9F6 60%, #FDF8EC 100%);
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -287,8 +289,18 @@
             right: -20%;
             width: 80%;
             height: 150%;
-            background: radial-gradient(circle, rgba(201, 162, 39, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(201, 162, 39, 0.12) 0%, transparent 70%);
             animation: float 20s infinite ease-in-out;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--secondary-green), var(--accent-gold), var(--secondary-green));
         }
         
         @keyframes float {
@@ -329,14 +341,14 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--card-bg);
+            background: white;
             padding: 0.5rem 1.5rem;
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 600;
-            color: var(--accent-gold);
+            color: var(--secondary-green);
             margin-bottom: 1.5rem;
-            box-shadow: 0 5px 15px rgba(201, 162, 39, 0.2);
+            box-shadow: 0 5px 20px rgba(11, 61, 46, 0.12);
             border: 1px solid rgba(201, 162, 39, 0.3);
         }
         
@@ -345,30 +357,31 @@
         }
         
         .hero h1 {
-            color: var(--white);
+            color: var(--primary-green);
             margin-bottom: 1.5rem;
             font-weight: 800;
         }
-        
+
         .hero h1 .highlight {
             color: var(--accent-gold);
             position: relative;
             display: inline-block;
         }
-        
+
         .hero h1 .highlight::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: 2px;
             left: 0;
             width: 100%;
-            height: 12px;
-            background: rgba(201, 162, 39, 0.25);
+            height: 10px;
+            background: rgba(201, 162, 39, 0.18);
             z-index: -1;
+            border-radius: 4px;
         }
-        
+
         .hero p {
-            color: var(--gray);
+            color: #4B5563;
             margin-bottom: 2.5rem;
             max-width: 550px;
         }
@@ -411,12 +424,24 @@
         
         .stats-card {
             position: absolute;
-            background: var(--card-bg);
+            background: white;
             padding: 1.5rem 2rem;
             border-radius: 15px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 40px rgba(11, 61, 46, 0.15);
             animation: floatCard 3s infinite ease-in-out;
-            border: 1px solid rgba(201, 162, 39, 0.2);
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .stats-card h3 {
+            font-size: 2.5rem;
+            color: var(--secondary-green);
+            margin-bottom: 0.25rem;
+        }
+
+        .stats-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin: 0;
         }
         
         @keyframes floatCard {
@@ -451,8 +476,9 @@
         /* Trust Badges */
         .trust-section {
             padding: 3rem 2rem;
-            background: var(--card-bg);
-            border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+            background: white;
+            border-bottom: 1px solid rgba(11, 61, 46, 0.08);
+            border-top: 1px solid rgba(11, 61, 46, 0.08);
         }
         
         .trust-container {
@@ -482,7 +508,7 @@
         
         .trust-item h4 {
             font-size: 1.75rem;
-            color: var(--accent-gold);
+            color: var(--primary-green);
             margin-bottom: 0.25rem;
         }
         
@@ -521,7 +547,7 @@
         }
         
         .section-header h2 {
-            color: var(--white);
+            color: var(--primary-green);
             margin-bottom: 1rem;
         }
         
@@ -538,7 +564,7 @@
         }
         
         .service-card {
-            background: var(--card-bg);
+            background: white;
             padding: 2.5rem;
             border-radius: 20px;
             transition: all 0.4s ease;
@@ -546,7 +572,8 @@
             position: relative;
             overflow: hidden;
             opacity: 0;
-            border: 1px solid rgba(201, 162, 39, 0.1);
+            border: 1px solid rgba(11, 61, 46, 0.08);
+            box-shadow: 0 4px 20px rgba(11, 61, 46, 0.07);
         }
         
         .service-card.visible {
@@ -597,7 +624,7 @@
         }
         
         .service-card h3 {
-            color: var(--white);
+            color: var(--primary-green);
             margin-bottom: 1rem;
         }
         
@@ -643,7 +670,7 @@
         /* Process Section */
         .process {
             padding: 6rem 2rem;
-            background: var(--card-bg);
+            background: white;
         }
         
         .process-container {
@@ -712,8 +739,26 @@
         }
         
         .step-content h3 {
-            color: var(--white);
+            color: var(--primary-green);
             margin-bottom: 1rem;
+        }
+
+        .step-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .step-features li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .step-features li i {
+            color: var(--secondary-green);
+            margin-top: 0.25rem;
         }
         
         .step-content p {
@@ -840,13 +885,13 @@
         }
         
         .testimonial-card {
-            background: var(--card-bg);
+            background: white;
             padding: 2.5rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 30px rgba(11, 61, 46, 0.1);
             transition: all 0.4s ease;
             opacity: 0;
-            border: 1px solid rgba(201, 162, 39, 0.1);
+            border: 1px solid rgba(11, 61, 46, 0.07);
         }
         
         .testimonial-card.visible {
@@ -855,7 +900,7 @@
         
         .testimonial-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+            box-shadow: 0 20px 50px rgba(11, 61, 46, 0.15);
         }
         
         .stars {
@@ -891,7 +936,7 @@
         }
         
         .author-info h4 {
-            color: var(--white);
+            color: var(--primary-green);
             margin-bottom: 0.25rem;
             font-size: 1.1rem;
         }
@@ -906,7 +951,7 @@
         /* Application Form */
         .application {
             padding: 6rem 2rem;
-            background: var(--neutral-bg);
+            background: white;
         }
         
         .application-container {
@@ -953,7 +998,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: var(--card-bg);
+            background: white;
             border: 3px solid var(--light-gray);
             margin: 0 auto 0.5rem;
             display: flex;
@@ -999,7 +1044,7 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: var(--text-light);
+            color: var(--primary-green);
         }
         
         .form-group input,
@@ -1012,16 +1057,17 @@
             font-size: 1rem;
             font-family: 'Crimson Pro', serif;
             transition: all 0.3s ease;
-            background: var(--card-bg);
+            background: var(--neutral-bg);
             color: var(--text-light);
         }
-        
+
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.2);
+            border-color: var(--secondary-green);
+            box-shadow: 0 0 0 3px rgba(15, 106, 79, 0.12);
+            background: white;
         }
         
         .form-group textarea {
@@ -1063,20 +1109,21 @@
             padding: 6rem 2rem;
             background: var(--neutral-bg);
         }
-        
+
         .faq-container {
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .faq-item {
-            background: var(--card-bg);
+            background: white;
             border-radius: 15px;
             margin-bottom: 1rem;
             overflow: hidden;
             transition: all 0.3s ease;
             opacity: 0;
-            border: 1px solid rgba(201, 162, 39, 0.1);
+            border: 1px solid rgba(11, 61, 46, 0.1);
+            box-shadow: 0 2px 10px rgba(11, 61, 46, 0.05);
         }
         
         .faq-item.visible {
@@ -1090,10 +1137,10 @@
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            color: var(--white);
+            color: var(--primary-green);
             transition: all 0.3s ease;
         }
-        
+
         .faq-question:hover {
             background: var(--neutral-bg);
         }
@@ -1126,7 +1173,7 @@
         /* Contact Section */
         .contact {
             padding: 6rem 2rem;
-            background: var(--card-bg);
+            background: white;
         }
         
         .contact-container {
@@ -1138,7 +1185,7 @@
         }
         
         .contact-info h3 {
-            color: var(--white);
+            color: var(--primary-green);
             margin-bottom: 1rem;
         }
         
@@ -1160,14 +1207,25 @@
             background: var(--neutral-bg);
             border-radius: 10px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(201, 162, 39, 0.1);
+            border: 1px solid rgba(11, 61, 46, 0.08);
         }
-        
+
         .contact-method:hover {
-            background: var(--card-bg);
-            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.2);
+            background: white;
+            box-shadow: 0 10px 30px rgba(11, 61, 46, 0.12);
             transform: translateX(10px);
-            border-color: rgba(201, 162, 39, 0.3);
+            border-color: rgba(201, 162, 39, 0.4);
+        }
+
+        .contact-method-info h4 {
+            color: var(--primary-green);
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-method-info a {
+            color: var(--secondary-green);
+            text-decoration: none;
         }
         
         .contact-method i {
@@ -1438,10 +1496,10 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: var(--dark);
+                background: white;
                 padding: 2rem;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                border-top: 1px solid rgba(201, 162, 39, 0.2);
+                box-shadow: 0 10px 30px rgba(11, 61, 46, 0.15);
+                border-top: 2px solid rgba(201, 162, 39, 0.3);
             }
             
             h1 { font-size: 2rem; }
@@ -1553,32 +1611,29 @@
             animation: rotateIn 0.7s ease forwards;
         }
         
-        /* Stock Images Styling */
         .stock-image {
             width: 100%;
             height: auto;
             border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 60px rgba(11, 61, 46, 0.15);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
-            background: var(--card-bg);
+            background: var(--neutral-bg);
             min-height: 200px;
             object-fit: cover;
             will-change: transform;
             contain: layout style paint;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
         }
-        
+
         .stock-image:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 30px 80px rgba(201, 162, 39, 0.4);
+            box-shadow: 0 30px 80px rgba(11, 61, 46, 0.25);
         }
-        
+
         .image-container {
             position: relative;
             overflow: hidden;
             border-radius: 15px;
-            background: var(--card-bg);
+            background: var(--neutral-bg);
             contain: layout style paint;
         }
         
@@ -1622,22 +1677,23 @@
         }
         
         .feature-item {
-            background: var(--card-bg);
+            background: white;
             padding: 2rem;
             border-radius: 15px;
-            border: 1px solid rgba(201, 162, 39, 0.2);
+            border: 1px solid rgba(11, 61, 46, 0.1);
             transition: all 0.4s ease;
             opacity: 0;
+            box-shadow: 0 4px 15px rgba(11, 61, 46, 0.07);
         }
-        
+
         .feature-item.visible {
             animation: scaleIn 0.6s ease forwards;
         }
-        
+
         .feature-item:hover {
             transform: translateY(-10px);
-            border-color: rgba(201, 162, 39, 0.5);
-            box-shadow: 0 15px 40px rgba(201, 162, 39, 0.3);
+            border-color: rgba(201, 162, 39, 0.4);
+            box-shadow: 0 15px 40px rgba(11, 61, 46, 0.15);
         }
         
         .feature-icon-large {
@@ -2069,7 +2125,7 @@
                     <div class="feature-icon-large">
                         <i class="fas fa-user-tie"></i>
                     </div>
-                    <h3 style="color: var(--white); text-align: center; margin-bottom: 1rem;">Expert Recruitment</h3>
+                    <h3 style="color: var(--primary-green); text-align: center; margin-bottom: 1rem;">Expert Recruitment</h3>
                     <p style="color: var(--gray); text-align: center;">Rigorous candidate screening and matching process ensures the perfect fit for every position.</p>
                 </div>
                 
@@ -2085,7 +2141,7 @@
                     <div class="feature-icon-large">
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
-                    <h3 style="color: var(--white); text-align: center; margin-bottom: 1rem;">Professional Training</h3>
+                    <h3 style="color: var(--primary-green); text-align: center; margin-bottom: 1rem;">Professional Training</h3>
                     <p style="color: var(--gray); text-align: center;">Comprehensive training programs to enhance skills and ensure workplace readiness.</p>
                 </div>
                 
@@ -2101,7 +2157,7 @@
                     <div class="feature-icon-large">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3 style="color: var(--white); text-align: center; margin-bottom: 1rem;">Ongoing Support</h3>
+                    <h3 style="color: var(--primary-green); text-align: center; margin-bottom: 1rem;">Ongoing Support</h3>
                     <p style="color: var(--gray); text-align: center;">Continuous support from application to placement and beyond for lasting success.</p>
                 </div>
             </div>
@@ -2120,19 +2176,19 @@
                     <p style="color: var(--gray); margin-bottom: 1.5rem; line-height: 1.8;">Our proven track record speaks for itself. We've successfully placed thousands of professionals across multiple industries and countries, earning the trust of both job seekers and employers worldwide.</p>
                     <div class="feature-grid" style="margin-top: 2rem;">
                         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                            <i class="fas fa-check-circle" style="color: var(--accent-gold); font-size: 1.5rem;"></i>
+                            <i class="fas fa-check-circle" style="color: var(--secondary-green); font-size: 1.5rem;"></i>
                             <span style="color: var(--text-light);">ISO Certified Processes</span>
                         </div>
                         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                            <i class="fas fa-check-circle" style="color: var(--accent-gold); font-size: 1.5rem;"></i>
+                            <i class="fas fa-check-circle" style="color: var(--secondary-green); font-size: 1.5rem;"></i>
                             <span style="color: var(--text-light);">Licensed & Bonded</span>
                         </div>
                         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                            <i class="fas fa-check-circle" style="color: var(--accent-gold); font-size: 1.5rem;"></i>
+                            <i class="fas fa-check-circle" style="color: var(--secondary-green); font-size: 1.5rem;"></i>
                             <span style="color: var(--text-light);">24/7 Customer Support</span>
                         </div>
                         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                            <i class="fas fa-check-circle" style="color: var(--accent-gold); font-size: 1.5rem;"></i>
+                            <i class="fas fa-check-circle" style="color: var(--secondary-green); font-size: 1.5rem;"></i>
                             <span style="color: var(--text-light);">Ethical Recruitment Practices</span>
                         </div>
                     </div>
@@ -2361,8 +2417,8 @@
                 
                 <!-- Step 4: Review -->
                 <div class="form-step" data-step="4">
-                    <h3 style="color: var(--white); margin-bottom: 1.5rem;">Review Your Application</h3>
-                    <div id="reviewContent" style="background: var(--card-bg); padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; border: 1px solid rgba(201, 162, 39, 0.2);">
+                    <h3 style="color: var(--primary-green); margin-bottom: 1.5rem;">Review Your Application</h3>
+                    <div id="reviewContent" style="background: var(--neutral-bg); padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; border: 1px solid rgba(11, 61, 46, 0.1);">
                         <!-- Review content will be populated by JavaScript -->
                     </div>
                     
@@ -2574,7 +2630,7 @@
                 <p>Stay updated with latest job opportunities and career tips.</p>
                 <form id="newsletterForm" style="margin-top: 1rem;">
                     <div class="form-group" style="margin-bottom: 0.5rem;">
-                        <input type="email" placeholder="Your email address" style="width: 100%; padding: 0.75rem; border: 1px solid rgba(201,162,39,0.3); border-radius: 8px; background: rgba(13,21,17,0.5); color: white;">
+                        <input type="email" placeholder="Your email address" style="width: 100%; padding: 0.75rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.1); color: white;">
                     </div>
                     <button type="submit" class="btn btn-gold" style="width: 100%;">Subscribe</button>
                 </form>
@@ -2819,20 +2875,18 @@
         function populateReview() {
             const reviewContent = document.getElementById('reviewContent');
             reviewContent.innerHTML = `
-                <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Personal Information</h4>
+                <h4 style="color: var(--primary-green); margin-bottom: 1rem;">Personal Information</h4>
                 <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
                 <p><strong>Email:</strong> ${formData.email}</p>
                 <p><strong>Phone:</strong> ${formData.phone}</p>
                 <p><strong>Nationality:</strong> ${formData.nationality}</p>
-                
-                <h4 style="color: var(--accent-gold); margin: 1.5rem 0 1rem;">Experience & Education</h4>
+                <h4 style="color: var(--primary-green); margin: 1.5rem 0 1rem;">Experience & Education</h4>
                 <p><strong>Education:</strong> ${formData.education}</p>
                 <p><strong>Field:</strong> ${formData.field}</p>
                 <p><strong>Experience:</strong> ${formData.experience}</p>
                 <p><strong>Current Role:</strong> ${formData.currentRole}</p>
                 <p><strong>Skills:</strong> ${formData.skills}</p>
-                
-                <h4 style="color: var(--accent-gold); margin: 1.5rem 0 1rem;">Job Preferences</h4>
+                <h4 style="color: var(--primary-green); margin: 1.5rem 0 1rem;">Job Preferences</h4>
                 <p><strong>Job Type:</strong> ${formData.jobType}</p>
                 <p><strong>Preferred Locations:</strong> ${formData.locations}</p>
                 <p><strong>Availability:</strong> ${formData.availability}</p>
